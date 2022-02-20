@@ -23,8 +23,6 @@ class KochFractal: NSObject, ObservableObject {
         
     }
     
-    ///Pseudo code:
-    ///Pick starting point(s) (just calculate one side for 'n' iterations, then duplicate and rotate sides)
     ///How to calculate Koch snowflake:
     /// -Take a line
     /// -Cut it into thirds (four points)
