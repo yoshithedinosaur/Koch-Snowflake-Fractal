@@ -33,7 +33,7 @@ class KochFractal: NSObject, ObservableObject {
 
     var sideLength: Double = 600
     var previousPoint: (xPoint: Double, yPoint: Double) = (0.0, 0.0)
-    var levelAngle: Double = 0.0
+    //var levelAngle: Double = 0.0
     var fractalVerts = [(xPoint: Double, yPoint: Double)]()
     var maxLevel: Int = 0
     var atBPoint: Bool = false
@@ -44,7 +44,7 @@ class KochFractal: NSObject, ObservableObject {
     ///       /    \
     ///A____B/        \D_____E
     ///
-    @MainActor func kochSides(level: Int, sideLength: Double, startPoint: (xPoint: Double, yPoint: Double)) {
+    @MainActor func kochSides(level: Int, sideLength: Double, startPoint: (xPoint: Double, yPoint: Double), levelAngle: Double) {
         
         let fractalAngle: Double = Double.pi/3
         
@@ -55,49 +55,49 @@ class KochFractal: NSObject, ObservableObject {
             //updateKoch(newVerts: fractalVerts[fractalVerts.endIndex-1])
         } else {
             
-            if atBPoint {
-                levelAngle -= 4*fractalAngle
-                angleIsOffset = true
-            }
+            //if atBPoint {
+            //    levelAngle -= 4*fractalAngle
+            //    angleIsOffset = true
+            //}
             
             //Point A
             fractalVerts = [previousPoint]
-            kochSides(level: level-1, sideLength: sideLength/3, startPoint: fractalVerts[fractalVerts.endIndex-1])
-            atBPoint = false
+            kochSides(level: level-1, sideLength: sideLength/3, startPoint: fractalVerts[fractalVerts.endIndex-1], levelAngle: levelAngle)
+            //atBPoint = false
             
             //Point B
             fractalVerts.append((previousPoint.xPoint + sideLength * cos(levelAngle), previousPoint.yPoint + sideLength * sin(levelAngle)))
-            kochSides(level: level-1, sideLength: sideLength/3, startPoint: fractalVerts[fractalVerts.endIndex-1])
-            levelAngle += fractalAngle
-            atBPoint = true
+            kochSides(level: level-1, sideLength: sideLength/3, startPoint: fractalVerts[fractalVerts.endIndex-1], levelAngle: levelAngle+fractalAngle)
+            //levelAngle += fractalAngle
+            //atBPoint = true
 
             //Point C
             fractalVerts.append(calculateKochPoints(edgeLength: sideLength, previousPoint: fractalVerts[fractalVerts.endIndex-1], angle: levelAngle))
-            kochSides(level: level-1, sideLength: sideLength/3, startPoint: fractalVerts[fractalVerts.endIndex-1])
-            levelAngle -= 2*fractalAngle
-            atBPoint = false
+            kochSides(level: level-1, sideLength: sideLength/3, startPoint: fractalVerts[fractalVerts.endIndex-1], levelAngle: levelAngle-fractalAngle)
+            //levelAngle -= 2*fractalAngle
+            //atBPoint = false
             
             //Point D
             fractalVerts.append(calculateKochPoints(edgeLength: sideLength, previousPoint: fractalVerts[fractalVerts.endIndex-1], angle: levelAngle))
-            kochSides(level: level-1, sideLength: sideLength/3, startPoint: fractalVerts[fractalVerts.endIndex-1])
-            levelAngle += fractalAngle
-            atBPoint = false
+            kochSides(level: level-1, sideLength: sideLength/3, startPoint: fractalVerts[fractalVerts.endIndex-1], levelAngle: levelAngle)
+            //levelAngle += fractalAngle
+            //atBPoint = false
 
             //Point E
-            if (level == 1) {
-                fractalVerts.append(calculateKochPoints(edgeLength: sideLength, previousPoint: fractalVerts[fractalVerts.endIndex-1], angle: levelAngle))
-                //kochSides(level: level-1, sideLength: sideLength/3, startPoint: fractalVerts[fractalVerts.endIndex-1])
-                atBPoint = false
+            //if (level == 1) {
+            //    fractalVerts.append(calculateKochPoints(edgeLength: sideLength, previousPoint: fractalVerts[fractalVerts.endIndex-1], angle: levelAngle))
+            //    kochSides(level: level-1, sideLength: sideLength/3, startPoint: fractalVerts[fractalVerts.endIndex-1], levelAngle: levelAngle)
+                //atBPoint = false
                 
-            }
+            //}
             if level == maxLevel {print("FINAL POINT")}
             
-            if angleIsOffset {
-                levelAngle += 3*fractalAngle
-                angleIsOffset = false
-            } else {
-                levelAngle += fractalAngle
-            }
+            //if angleIsOffset {
+            //    levelAngle += 3*fractalAngle
+            //    angleIsOffset = false
+            //} else {
+            //    levelAngle += fractalAngle
+            //}
             
         }
         
