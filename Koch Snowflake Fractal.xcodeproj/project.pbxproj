@@ -17,6 +17,12 @@
 		A3FA427A27C04BB500ADDF0F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA425027C04BAF00ADDF0F /* ContentView.swift */; };
 		A3FA427B27C04BB500ADDF0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3FA425127C04BB500ADDF0F /* Assets.xcassets */; };
 		A3FA427C27C04BB500ADDF0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3FA425127C04BB500ADDF0F /* Assets.xcassets */; };
+		A3FA428C27C04BF400ADDF0F /* FractalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA428B27C04BF400ADDF0F /* FractalView.swift */; };
+		A3FA428D27C04BF400ADDF0F /* FractalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA428B27C04BF400ADDF0F /* FractalView.swift */; };
+		A3FA428F27C058A900ADDF0F /* KochFractal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA428E27C058A900ADDF0F /* KochFractal.swift */; };
+		A3FA429027C058A900ADDF0F /* KochFractal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA428E27C058A900ADDF0F /* KochFractal.swift */; };
+		A3FA429227C068A300ADDF0F /* KochFractalCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA429127C068A300ADDF0F /* KochFractalCalculations.swift */; };
+		A3FA429327C068A300ADDF0F /* KochFractalCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FA429127C068A300ADDF0F /* KochFractalCalculations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,9 @@
 		A3FA426F27C04BB500ADDF0F /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FA427327C04BB500ADDF0F /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		A3FA427527C04BB500ADDF0F /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		A3FA428B27C04BF400ADDF0F /* FractalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractalView.swift; sourceTree = "<group>"; };
+		A3FA428E27C058A900ADDF0F /* KochFractal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KochFractal.swift; sourceTree = "<group>"; };
+		A3FA429127C068A300ADDF0F /* KochFractalCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KochFractalCalculations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +108,9 @@
 			children = (
 				A3FA424F27C04BAF00ADDF0F /* Koch_Snowflake_FractalApp.swift */,
 				A3FA425027C04BAF00ADDF0F /* ContentView.swift */,
+				A3FA428E27C058A900ADDF0F /* KochFractal.swift */,
+				A3FA429127C068A300ADDF0F /* KochFractalCalculations.swift */,
+				A3FA428B27C04BF400ADDF0F /* FractalView.swift */,
 				A3FA425127C04BB500ADDF0F /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -299,7 +311,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3FA428C27C04BF400ADDF0F /* FractalView.swift in Sources */,
+				A3FA429227C068A300ADDF0F /* KochFractalCalculations.swift in Sources */,
 				A3FA427927C04BB500ADDF0F /* ContentView.swift in Sources */,
+				A3FA428F27C058A900ADDF0F /* KochFractal.swift in Sources */,
 				A3FA427727C04BB500ADDF0F /* Koch_Snowflake_FractalApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,7 +323,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3FA428D27C04BF400ADDF0F /* FractalView.swift in Sources */,
+				A3FA429327C068A300ADDF0F /* KochFractalCalculations.swift in Sources */,
 				A3FA427A27C04BB500ADDF0F /* ContentView.swift in Sources */,
+				A3FA429027C058A900ADDF0F /* KochFractal.swift in Sources */,
 				A3FA427827C04BB500ADDF0F /* Koch_Snowflake_FractalApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
